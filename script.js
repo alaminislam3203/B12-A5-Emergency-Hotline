@@ -1,3 +1,5 @@
+// copy number
+
 function getTextContent(element) {
     let number = document.getElementById(element).innerText;
     return number;
@@ -18,4 +20,18 @@ function copyContent(title, number) {
     }, function (err) {
         console.error('Could not copy text: ', err);
     });
+}
+
+// coin per call
+
+function callNumber(title, number) {
+    let coins = getTextContent("coin");
+    if (coins < 20) {
+        alert("Not enough coins. You need at least 20 coins to make a call.");
+        return;
+    }
+    decreaseCount("coin", 20);
+    addCallHistory(title, number);
+    alert('Calling ' + title + ": " + number);
+
 }
