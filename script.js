@@ -1,3 +1,15 @@
+// add heart count
+
+const hearts = document.querySelectorAll('.fa-heart');
+hearts.forEach(heart => {
+    heart.style.cursor = 'pointer';
+    heart.addEventListener('click', (event) => {
+        increaseCount("heart", 1);
+    });
+});
+
+
+
 // copy number
 
 function getTextContent(element) {
@@ -35,3 +47,39 @@ function callNumber(title, number) {
     alert('Calling ' + title + ": " + number);
 
 }
+
+
+// add call history
+
+function addCallHistory(title, number) {
+    var historyList = document.getElementById("call-history");
+    var newEntry = document.createElement("div");
+    let callTime = new Date().toLocaleTimeString();
+    newEntry.className = "call-entry flex flex-row items-center justify-between mt-4 p-4 bg-gray-50 rounded-lg";
+    newEntry.innerHTML = `
+        <div><span class="font-bold text-xl">${title}</span><br/>
+        <span class="text-left text-gray-500">${number}</span>
+        </div>
+        <div class="text-gray-700">
+            ${callTime}
+        </div>
+    `;
+    historyList.appendChild(newEntry);
+
+}
+
+// clear history
+
+function clearHistory() {
+    var historyList = document.getElementById("call-history");
+    for (let i = historyList.children.length - 1; i >= 0; i--) {
+        let child = historyList.children[i];
+        if (child.classList.contains("call-entry")) {
+            historyList.removeChild(child);
+        }
+    }
+    alert("Call history cleared.");
+}
+
+
+
