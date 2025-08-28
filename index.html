@@ -16,44 +16,63 @@
 <body>
 
   <header>
-
     <!-- Navbar Section -->
-    <nav
-      class="flex items-center flex-col md:flex-row text-white justify-normal md:justify-between md:p-4 md:pr-10 md:pl-10">
-      <div class="flex items-center text-green-700 font-extrabold text-2xl mb-3">
-        <img src="assets/logo.png" alt="logo" class="h-16 mr-4 mt-2 md:mt-0" />
-        Emergency <br />Services
+    <nav class="flex items-center justify-between px-4 md:px-10 py-3 bg-white shadow">
+      <!-- Logo + Name -->
+      <div class="flex items-center text-green-700 font-extrabold text-xl md:text-2xl">
+        <img src="assets/logo.png" alt="logo" class="h-8 md:h-16 mr-3" />
+        <span class="leading-tight text-xs sm:text-lg md:text-xl lg:text-2xl">
+          Emergency <br />Services
+        </span>
+
       </div>
-      <div class="flex items-center mb-3 m-1">
+
+      <!-- Right Side Icons -->
+      <div class="flex items-center space-x-2 md:space-x-4">
+        <!-- Heart -->
         <div
-          class="bg-green-100 text-black pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none mr-2 md:mr-4 font-extrabold flex">
-          <span id="heart">0</span> <img src="assets/heart.png" alt="heart" class="h-6 ml-1" />
+          class="bg-green-100 text-black px-2 py-1 md:px-6 md:py-2 rounded-2xl md:rounded-3xl font-bold md:font-extrabold flex items-center text-sm md:text-base">
+          <span id="heart">0</span>
+          <img src="assets/heart.png" alt="heart" class="h-4 md:h-6 ml-1" />
         </div>
+
+        <!-- Coin -->
         <div
-          class="bg-green-100 text-black pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none mr-2 md:mr-4 font-extrabold flex">
-          <span id="coin">100</span><img src="assets/coin.png" alt="heart" class="h-6 ml-1" />
+          class="bg-green-100 text-black px-2 py-1 md:px-6 md:py-2 rounded-2xl md:rounded-3xl font-bold md:font-extrabold flex items-center text-sm md:text-base">
+          <span id="coin">100</span>
+          <img src="assets/coin.png" alt="coin" class="h-4 md:h-6 ml-1" />
         </div>
-        <div class="bg-green-600 pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none text-white flex">
+
+        <!-- Copy -->
+        <div
+          class="bg-green-600 px-2 py-1 md:px-6 md:py-2 rounded-2xl md:rounded-3xl text-white font-medium md:font-semibold flex items-center justify-center text-sm md:text-base">
           <span id="copy" class="mr-1">0</span> Copy
         </div>
       </div>
+
     </nav>
   </header>
 
-  <!-- <main class="bg-green-50"> -->
   <main class="bg-green-50 h-ful w-full">
 
 
     <!-- Hero Section -->
     <div
-      class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] h-72 md:h-48 flex flex-col p-2 items-center justify-center text-center">
-      <div><img src="assets/logo.png" alt="logo" class="h-20" /></div>
-      <div class="text-white font-bold text-4xl">
+      class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] h-40 md:h-72 lg:h-80 flex flex-col p-2 items-center justify-center text-center">
+
+      <!-- Logo -->
+      <div>
+        <img src="assets/logo.png" alt="logo" class="h-12 sm:h-16 md:h-20 lg:h-24" />
+      </div>
+
+      <!-- Title -->
+      <div class="mb-3 text-white font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl mt-2">
         Emergency Service Directory
       </div>
-      <div class="text-white mt-2 font-semibold">
-        Government Emergency Services at Your Fingertip - A Project by
-        Government of the People's Republic of Bangladesh
+
+      <!-- Subtitle -->
+      <div class="text-white mt-2 font-medium text-xs sm:text-sm md:text-base lg:text-sm max-w-3xl px-2">
+        Government Emergency Services at Your Fingertip - A Project by Government of the People's Republic of Bangladesh
       </div>
     </div>
 
@@ -305,7 +324,6 @@
         </div>
       </div>
     </div>
-
   </main>
   <script src="script.js"></script>
 </body>
