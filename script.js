@@ -63,27 +63,29 @@ function callNumber(title, number) {
 }
 
 
-// add call history
 
+
+// add call history
 function addCallHistory(title, number) {
     var historyList = document.getElementById("call-history");
     var newEntry = document.createElement("div");
     let callTime = new Date().toLocaleTimeString();
+
     newEntry.className = "call-entry flex flex-row items-center justify-between mt-4 p-4 bg-gray-50 rounded-lg";
+
     newEntry.innerHTML = `
-        <div><span class="font-bold text-xl">${title}</span><br/>
-        <span class="text-left text-gray-500">${number}</span>
+        <div>
+            <span class="font-bold text-xl">${title}</span><br/>
+            <span class="text-left text-gray-500">${number}</span>
         </div>
-        <div class="text-gray-700">
+        <div class="text-gray-700 text-xs whitespace-nowrap">
             ${callTime}
         </div>
     `;
     historyList.appendChild(newEntry);
-
 }
 
 // clear history
-
 function clearHistory() {
     var historyList = document.getElementById("call-history");
     for (let i = historyList.children.length - 1; i >= 0; i--) {
@@ -94,6 +96,4 @@ function clearHistory() {
     }
     alert("Call history cleared.");
 }
-
-
 
