@@ -1,12 +1,26 @@
-// add heart count
+// heart count
 
-const hearts = document.querySelectorAll('.fa-heart');
-hearts.forEach(heart => {
-    heart.style.cursor = 'pointer';
-    heart.addEventListener('click', (event) => {
-        increaseCount("heart", 1);
-    });
-});
+ function toggleHeart(icon) {
+    let heartCount = document.getElementById("heart");
+
+    if (icon.classList.contains("fa-regular")) {
+      
+      icon.classList.remove("fa-regular");
+      icon.classList.add("fa-solid", "text-red-500");
+
+      
+      heartCount.innerText = parseInt(heartCount.innerText) + 1;
+    } else {
+      
+      icon.classList.remove("fa-solid", "text-red-500");
+      icon.classList.add("fa-regular");
+
+      let current = parseInt(heartCount.innerText);
+      if (current > 0) {
+        heartCount.innerText = current - 1;
+      }
+    }
+  }
 
 
 
@@ -34,7 +48,7 @@ function copyContent(title, number) {
     });
 }
 
-// coin per call
+// call number
 
 function callNumber(title, number) {
     let coins = getTextContent("coin");
