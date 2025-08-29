@@ -96,4 +96,3 @@ function clearHistory() {
     }
     alert("Call history cleared.");
 }
-
