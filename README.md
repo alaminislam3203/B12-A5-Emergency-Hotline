@@ -3,71 +3,71 @@
 ---
 
 
-# সকল প্রশ্নের উত্তর নিচে দেওয়া হলো :
+# All the answers to the questions are given below:
 
-## ১.getElementById, getElementsByClassName, এবং querySelector / querySelectorAll এর মধ্যে পার্থক্য কী?
+## 1.What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
 - **getElementById(id)**  
-  - নির্দিষ্ট `id` এর element খুঁজে আনা যায় ।  
-  - শুধু একটিমাত্র element return করে ।  
+  - Can find the element of a specific id. 
+  - Returns only one element.
 
 - **getElementsByClassName(className)**  
-  - নির্দিষ্ট `class` নাম দিয়ে একাধিক element খুঁজে আনা যায় ।  
-  - Loop ব্যবহার করে প্রতিটি element এর কাজ করতে হয়। 
-  - সব element কে `HTMLCollection` আকারে return করে।   
+  - Can find multiple elements using a specific class name.
+  - Need to use a loop to work with each element.
+  - Returns all elements as an HTMLCollection.
 
 - **querySelector(cssSelector)**  
-- শুধু প্রথম পাওয়া element return করে।  
-  - CSS Selector ব্যবহার করে element খুঁজে আনা যায় ।  
+- Returns only the first matched element.
+  - Can find elements using CSS Selector.  
   
 
 - **querySelectorAll(cssSelector)**  
-  - CSS Selector ব্যবহার করে সব element খুঁজে আনা যায় ।  
-  - সব element কে `NodeList` আকারে return করে।  
-  - `forEach` দিয়ে সহজে iterate করা যায়।  
+  - Can find all elements using CSS Selector.
+  - Returns all elements as a NodeList.
+  - Can be easily iterated using forEach.
 
 ---
 
-## ২. কিভাবে আপনি DOM-এ একটি নতুন উপাদান তৈরি এবং সন্নিবেশ করবেন?
+## 2. How do you create and insert a new element in the DOM?
 
-- নতুন element তৈরি করতে **`document.createElement()`** ব্যবহার করা হয়।  
-- তারপর **`appendChild()`**, **`append()`**, **`prepend()`**, বা **`insertBefore()`** দিয়ে DOM-এ যোগ করা যায়।  
+- Use document.createElement() to create a new element.
+- Then use appendChild(), append(), prepend(), or insertBefore() to add it to the DOM.  
 
 
 ---
 
-## ৩. ইভেন্ট বাবলিং কী এবং এটি কীভাবে কাজ করে?
+## 3. What is event bubbling and how does it work?
 
-- Event Bubbling হলো DOM event propagation এর একটি অংশ ।  
-- যখন কোনো child element-এ event হয় , তখন সেই event প্রথমে child element-এ trigger হয়, তারপর parent element এ যায়, তারপর উপরের দিকে আরও parent গুলোতে propagate করে।  
-- event "বুদবুদের মত" নিচ থেকে উপরের দিকে ওঠে।  
+- Event bubbling is a part of DOM event propagation.
+- When an event occurs on a child element, it first triggers on the child, then moves to the parent, and then propagates upwards through more parent elements. 
+- The event rises upward "like a bubble" from bottom to top. 
 
 
 
-## ৪. জাভাস্ক্রিপ্টে ইভেন্ট ডেলিগেশন কী? এটি কেন কার্যকর?
+## 4. What is event delegation in JavaScript? Why is it useful?
 
-- Event Delegation হলো parent element-এ event listener বসানো, যাতে child element-গুলোর event একসাথে handle করা যায়।  
-- Event Bubbling এর কারণে child element-এর event parent এ পৌঁছায়। তাই আমরা parent-এ listener বসিয়ে ভিতরের child গুলোর event control করতে পারি।  
+- Event delegation is placing an event listener on a parent element so that the events of child elements can be handled together.
+- Because of event bubbling, the child element's event reaches the parent. That’s why we can place a listener on the parent and control the events of the child elements.
 
  
 
-**কেন কার্যকর?**
-- অনেক child element থাকলেও একটাই listener ব্যবহার করা যায়।  
-- Performance ভালো হয়, কোডও clean হয়। 
-- Dynamically তৈরি হওয়া child element এর event handle করা যায়। 
+**Why is it useful?**
+- Even with many child elements, only one listener is needed. 
+- Performance improves, and the code becomes cleaner.
+- Can handle events of dynamically created child elements.
 
 ---
 
-## ৫. preventDefault() এবং stopPropagation() পদ্ধতির মধ্যে পার্থক্য কী?
+## 5.What is the difference between preventDefault() and stopPropagation()?
 
 - **preventDefault()**  
-  - কোনো element এর default behavior বন্ধ করে।  
-  - যেমন form submit হওয়া, link এ গিয়ে page reload হওয়া ইত্যাদি থামানো যায়।  
+  - Stops the default behavior of an element. 
+  - For example, prevents form submission or page reload when clicking a link.
 
 
 - **stopPropagation()**  
-  - Event এর propagation বন্ধ করে দেয়।  
-  - অর্থাৎ event Bubbling (child → parent) বা Capturing (parent → child) আর চালু থাকে না।  
+  - Stops the propagation of the event.
+  - Meaning event bubbling (child → parent) or capturing (parent → child) no longer continues.  
 
 ---
 
